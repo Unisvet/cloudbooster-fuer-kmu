@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud & KI: Ihr Autopilot zum Erfolg</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0c111f;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 4rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 5px #0ea5e9, 0 0 15px #0ea5e9, 0 0 30px #0ea5e9;
+        }
+        
+        .glow-effect-green {
+            box-shadow: 0 0 5px #10b981, 0 0 15px #10b981, 0 0 30px #10b981;
+        }
+
+        .card {
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #0c111f, #111827, #0c111f);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .tab-button.active {
+            color: #38bdf8;
+            border-bottom-color: #38bdf8;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stat-bar-container {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .stat-bar {
+            height: 1.5rem;
+            background: linear-gradient(90deg, #ef4444, #f97316);
+            width: 0%;
+            transition: width 1.5s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 0.5rem;
+            font-weight: 600;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section 1: Hero -->
+    <section id="hero" class="section text-center">
+        <div class="animated-bg"></div>
+        <div class="z-10">
+            <h1 class="text-4xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">Stecken Sie im digitalen Stau?</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300">Viele KMU haben digitalisiert, aber nur wenige schöpfen das wahre Potenzial aus. Es ist Zeit, den Autopiloten zu aktivieren.</p>
+            <a href="#problem" class="inline-block bg-sky-500 text-white font-bold py-3 px-8 rounded-full glow-effect hover:bg-sky-600 transition-transform transform hover:scale-105">
+                Entdecken Sie die Lösung
+            </a>
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-400 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: The Problem -->
+    <section id="problem" class="section">
+        <div class="animated-bg"></div>
+        <div class="text-center mb-12 z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 scroll-reveal">Die wachsende digitale Kluft</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-gray-400 scroll-reveal" style="transition-delay: 100ms;">Die Cloud-Nutzung ist hoch, doch die strategische Anwendung fehlt. Das führt zu einem spürbaren Wettbewerbsnachteil.</p>
+        </div>
+        <div class="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 z-10">
+            <div class="card p-6 scroll-reveal" style="transition-delay: 200ms;">
+                <h3 class="text-xl font-semibold mb-4 text-sky-400">Fehlender Digitalisierungsfahrplan</h3>
+                <p class="text-5xl font-bold mb-2">45%</p>
+                <p class="text-gray-400">der KMU agieren ohne klare digitale Strategie.</p>
+                <div class="stat-bar-container mt-4"><div class="stat-bar" data-width="45">45%</div></div>
+            </div>
+            <div class="card p-6 scroll-reveal" style="transition-delay: 300ms;">
+                <h3 class="text-xl font-semibold mb-4 text-sky-400">Veraltete IT-Infrastruktur</h3>
+                <p class="text-5xl font-bold mb-2">59%</p>
+                <p class="text-gray-400">kämpfen mit veralteter Technik.</p>
+                <div class="stat-bar-container mt-4"><div class="stat-bar" data-width="59">59%</div></div>
+            </div>
+             <div class="card p-6 md:col-span-2 scroll-reveal" style="transition-delay: 400ms;">
+                <h3 class="text-xl font-semibold mb-4 text-red-500">Spürbarer Wettbewerbsnachteil</h3>
+                <p class="text-5xl font-bold mb-2">76%</p>
+                <p class="text-gray-400">der Unternehmen beklagen bereits einen Nachteil gegenüber der agileren Konkurrenz.</p>
+                <div class="stat-bar-container mt-4"><div class="stat-bar" data-width="76">76%</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Power Plant (Cloud Trends) -->
+    <section id="powerplant" class="section">
+        <div class="animated-bg"></div>
+        <div class="text-center mb-12 z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 scroll-reveal">Die Cloud ist Ihr neues Kraftwerk</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-gray-400 scroll-reveal" style="transition-delay: 100ms;">Moderne Cloud-Strategien sind mehr als Speicher. Sie sind die Energiequelle für Agilität, Effizienz und Innovation.</p>
+        </div>
+        <div class="w-full max-w-6xl mx-auto z-10 scroll-reveal" style="transition-delay: 200ms;">
+            <div class="card p-4 md:p-8">
+                <div class="flex justify-center border-b border-gray-700 mb-6">
+                    <button class="tab-button active py-4 px-6 text-lg font-semibold" data-tab="multi-cloud">Multi-Cloud</button>
+                    <button class="tab-button py-4 px-6 text-lg font-semibold" data-tab="serverless">Serverless</button>
+                    <button class="tab-button py-4 px-6 text-lg font-semibold" data-tab="finops">FinOps</button>
+                </div>
+                <div id="multi-cloud" class="tab-content active">
+                    <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
+                        <div class="text-center text-8xl">☁️+☁️</div>
+                        <div class="md:col-span-2">
+                            <h3 class="text-2xl font-bold text-sky-400 mb-2">Die Kunst, nicht alles auf eine Karte zu setzen</h3>
+                            <p class="text-gray-300">Nutzen Sie die besten Dienste mehrerer Anbieter (AWS, Google, Azure), um Abhängigkeiten zu vermeiden und die Flexibilität zu maximieren. Das erhöht die Ausfallsicherheit und stärkt Ihre Verhandlungsposition.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="serverless" class="tab-content">
+                     <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
+                        <div class="text-center text-8xl">⚡️</div>
+                        <div class="md:col-span-2">
+                            <h3 class="text-2xl font-bold text-sky-400 mb-2">Fahren Sie Taxi, statt das Auto selbst zu warten</h3>
+                            <p class="text-gray-300">Zahlen Sie nur für die Rechenleistung, die Sie wirklich nutzen – sekundengenau. Entwickeln Sie komplexe Apps ohne eigene Server-Experten und senken Sie die Kosten drastisch.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="finops" class="tab-content">
+                     <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
+                        <div class="text-center text-8xl">💰</div>
+                        <div class="md:col-span-2">
+                            <h3 class="text-2xl font-bold text-sky-400 mb-2">Der Finanz-Coach für Ihre Cloud-Ausgaben</h3>
+                            <p class="text-gray-300">Bringen Sie Finanzen und IT zusammen, um den maximalen Geschäftswert aus jedem investierten Euro zu holen. Decken Sie Einsparpotenziale von bis zu 30% auf und gewinnen Sie die Kontrolle über Ihre Ausgaben.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 4: The Pilot (AI Agents) -->
+    <section id="pilot" class="section">
+        <div class="animated-bg"></div>
+        <div class="text-center mb-12 z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 scroll-reveal">Ihr neuer Mitarbeiter, der niemals schläft</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-gray-400 scroll-reveal" style="transition-delay: 100ms;">KI-Agenten sind keine passiven Werkzeuge mehr, sondern digitale Mitarbeiter, die Ziele verstehen, Pläne entwickeln und Aufgaben autonom erledigen.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl z-10">
+            <div class="card p-6 text-center scroll-reveal" style="transition-delay: 200ms;">
+                <div class="text-6xl mb-4">🤖</div>
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">Der Vertriebs-Assistent</h3>
+                <p class="text-gray-400">Qualifiziert Leads, vereinbart Termine und legt Kunden im CRM an – 24/7. Ihr Vertriebsteam konzentriert sich auf den Abschluss.</p>
+            </div>
+            <div class="card p-6 text-center scroll-reveal" style="transition-delay: 300ms;">
+                <div class="text-6xl mb-4">👩‍💼</div>
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">Die Büro-Managerin</h3>
+                <p class="text-gray-400">Sortiert E-Mails, beantwortet Standardfragen und fasst komplexe Vorgänge zusammen. Ihr Team fokussiert sich auf wertschöpfende Arbeit.</p>
+            </div>
+            <div class="card p-6 text-center scroll-reveal" style="transition-delay: 400ms;">
+                <div class="text-6xl mb-4">📈</div>
+                <h3 class="text-xl font-bold text-emerald-400 mb-2">Der Marketing-Profi</h3>
+                <p class="text-gray-400">Erstellt SEO-Texte, plant Social-Media-Posts und generiert ansprechende Bilder. Professionelles Marketing ohne teure Agentur.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: The Dream Team -->
+    <section id="dreamteam" class="section">
+        <div class="animated-bg"></div>
+        <div class="text-center mb-12 z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 scroll-reveal">Das Dream-Team: Cloud + KI</h2>
+            <p class="text-lg md:text-xl max-w-4xl mx-auto text-gray-400 scroll-reveal" style="transition-delay: 100ms;">Die Cloud liefert die Energie, die KI-Agenten benötigen, um Prozesse zu revolutionieren. Das perfekte Beispiel: Der Digitale Zwilling.</p>
+        </div>
+        <div class="w-full max-w-6xl z-10 card p-8 scroll-reveal" style="transition-delay: 200ms;">
+            <h3 class="text-2xl font-bold text-center mb-8 text-sky-400">Anwendungsfall: Vorausschauende Wartung</h3>
+            <div class="flex flex-col md:flex-row items-center justify-around space-y-4 md:space-y-0 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl mb-2">🏭</div>
+                    <p class="font-semibold">1. Reale Maschine</p>
+                </div>
+                <div class="text-4xl text-sky-500 animate-pulse transform md:rotate-0">→</div>
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl mb-2">📡</div>
+                    <p class="font-semibold">2. Echtzeit-Daten</p>
+                </div>
+                <div class="text-4xl text-sky-500 animate-pulse transform md:rotate-0">→</div>
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl mb-2">☁️</div>
+                    <p class="font-semibold">3. Cloud-Analyse</p>
+                </div>
+                <div class="text-4xl text-emerald-500 animate-pulse transform md:rotate-0">→</div>
+                <div class="flex flex-col items-center">
+                    <div class="text-5xl mb-2">💡</div>
+                    <p class="font-semibold">4. Proaktive Wartung</p>
+                </div>
+            </div>
+            <p class="text-center mt-8 text-gray-300">Simulieren Sie Prozesse risikofrei, sagen Sie Ausfälle vorher und optimieren Sie Abläufe, bevor teure Stillstände entstehen.</p>
+        </div>
+    </section>
+
+    <!-- Section 6: CTA -->
+    <section id="cta" class="section bg-gray-900">
+        <div class="animated-bg"></div>
+        <div class="text-center z-10 card p-8 md:p-12 border-2 border-emerald-500 glow-effect-green">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 scroll-reveal">Starten Sie Ihren Cloud-Booster!</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-300 mb-6 scroll-reveal" style="transition-delay: 100ms;">Genug Theorie. In unserem kostenfreien, einstündigen Online-Workshop zeigen wir Ihnen praxisnah, wie Sie die Weichen für Ihre digitale Zukunft stellen.</p>
+            <div class="text-left inline-block bg-gray-800 p-6 rounded-lg border border-gray-700 mb-8 scroll-reveal" style="transition-delay: 200ms;">
+                <p><strong>📅 Datum:</strong> Dienstag, 09. September 2025</p>
+                <p><strong>⏰ Uhrzeit:</strong> 13:00 - 14:00 Uhr</p>
+                <p><strong>📍 Ort:</strong> Online – Bequem von Ihrem Schreibtisch aus</p>
+                <p><strong>💰 Kosten:</strong> Kostenfrei</p>
+            </div>
+            <div class="scroll-reveal" style="transition-delay: 300ms;">
+                <a href="https://www.digitalzentrum-spreeland.de/Veranstaltungen/event/533" target="_blank" class="inline-block bg-emerald-500 text-white font-bold py-4 px-10 rounded-full glow-effect-green hover:bg-emerald-600 transition-transform transform hover:scale-105 text-xl">
+                    Jetzt kostenfrei anmelden!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll Animations
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Stat Bars Animation
+            const statBars = document.querySelectorAll('.stat-bar');
+            const statObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const width = bar.getAttribute('data-width') + '%';
+                        bar.style.width = width;
+                        statObserver.unobserve(bar); // Animate only once
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statBars.forEach(bar => {
+                statObserver.observe(bar);
+            });
+
+            // Tabs functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    tabContents.forEach(content => {
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
